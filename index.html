@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ricardo Romo</title>
+    <link rel="shortcut icon" href="images/favicon.jpg">
+    <style media="screen">
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26369518-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-26369518-2');
+    </script>
+  </head>
+  <body>
+    <section class="portada background">
+      <header id="header" class="header contenedor"> <!-- cabecera -->
+        <figure class="logotipo" href="index.html"><!-- logotipo -->
+          <a href="index.html">
+            <img data-src="images/logo.jpg" href="index.html" alt="LOGO" height="60" width="60" id="logo">
+          </a>
+        </figure>
+        <span class="burguer-button icon-menu" id="burguer-button"></span>
+        <nav class="menu" id="menu"><!-- menu -->
+          <ul>
+            <li>
+              <a href="index.html">  Home</a>
+            </li>
+            <li>
+              <a href="sobremi.html"> Sobre Mi</a>
+            </li>
+            <li>
+              <a href="blog.html"> Blog</a>
+            </li>
+            <li>
+              <a href="proyectos.html">Proyectos</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div id='presentacion' class="contenedor presentacion">
+        <div class="texto">
+          <h1 class="titulo">Ricardo Romo</h1>
+          <h3 class="subtitulo">Mi primer sitio web</h3>
+          <a href="#proyectos" class="button">Conoce más</a>
+        </div>
+      </div>
+    </section>
+    <section id="proyectos" class="proyectos">
+      <div class="contenedor">
+        <div class="contProject">
+          <h2> <a href="proyectos.html" class="subCont">Mis proyectos</a></h2>
+          <div class="contenidos">
+          </div>
+        </div>
+      </div>
+      <div class="contenedor">
+        <div class="contProject">
+          <h2 > <a href="blog.html" class="subCont">Noticias</a></h2>
+          <div class="contenidos" id="blogs">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="blog" class="blog">
+
+    </section>
+    <footer class="footer">
+    </footer>
+    <script src="scripts/hammer.min.js"></script>
+    <script type="text/javascript"src="scripts/templatePage.js"></script>
+    <script type="text/javascript"src="scripts/landing_constructor.js"></script>
+    <script>
+      var rute = []
+      rute[0] = {
+                  rute: ""
+                }
+      renderContents($footer,rute,footer)
+
+      const consulta = window.matchMedia('(max-width:590px)')
+      consulta.addListener(mediaQuery);
+      const $burgerButton =  document.getElementById('burguer-button');
+      const $menu =  document.getElementById('menu');
+      const $logo =  document.getElementById('logo');
+      const $presentacion =  document.getElementById('presentacion');
+
+      function toggleMenu(){
+        $menu.classList.toggle('active')
+        $burgerButton.classList.toggle('icon-close')
+      }
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log("cumplio la query");
+          $burgerButton.addEventListener('touchstart', toggleMenu)
+          console.log($logo);
+          $logo.src="images/logo-white.jpg";
+          $logo.width="100"
+          $logo.height="100"
+        }
+        else {
+          console.log("no cumplio la condicion");
+          $burgerButton.removeEventListener('touchstart', toggleMenu)
+          $logo.src="images/logo.jpg";
+          $logo.width="60"
+          $logo.height="60" 
+        }
+      }
+      mediaQuery()
+
+      var $body = document.body;
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', function(ev) {
+        if (consulta.matches) {
+          $menu.classList.remove('active')
+          $burgerButton.classList.remove('icon-close')
+        }
+      });
+      gestos.on('swiperight', function(ev) {
+        if (consulta.matches) {
+          $menu.classList.add('active')
+          $burgerButton.classList.add('icon-close')
+          console.log($body.display)
+        }
+      });
+      window.onload= load
+      function load() {
+        $presentacion.classList.add('presentacion2')
+        setTimeout(()=> {
+        $presentacion.classList.add('presentacion3')
+      },300)
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/ricardoromo_stylesheet.css">
+  </body>
+</html>

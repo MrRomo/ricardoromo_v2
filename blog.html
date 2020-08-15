@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog - Ricardo Romo</title>
+    <link rel="shortcut icon" href="images/favicon.jpg">
+    <style media="screen">
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26369518-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-26369518-2');
+    </script>
+  </head>
+  <body>
+    <section class="portada background">
+      <header id="header" class="header"> <!-- cabecera -->
+      </header>
+    </section>
+    <section id="proyectos" class="proyectos background"> <!-- guitarras -->
+      <div class="background-color">
+        <div class="contenedor">
+          <div class="contProject">
+            <h2 class="subCont">Mis logros</h2>
+            <div class="contenidos" id="contenidos">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+    </footer>
+    <script src="scripts/hammer.min.js"></script>
+    <script type="text/javascript"src="scripts/templatePage.js"></script>
+    <script type="text/javascript"src="scripts/blog_constructor.js"></script>
+    <script>
+      var rute = []
+      rute[0] = {
+                  rute: ""
+                }
+      renderContents($header,rute,header)
+      renderContents($footer,rute,footer)
+      const consulta = window.matchMedia('(max-width:590px)')
+      consulta.addListener(mediaQuery);
+      const $burgerButton =  document.getElementById('burguer-button');
+      const $menu =  document.getElementById('menu');
+      const $logo =  document.getElementById('logo');
+
+      function toggleMenu(){
+        $menu.classList.toggle('active')
+        $burgerButton.classList.toggle('icon-close')
+      }
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log("cumplio la query");
+          $burgerButton.addEventListener('touchstart', toggleMenu)
+          console.log($logo);
+          $logo.src="images/logo-white.jpg";
+          $logo.width="100"
+          $logo.height="100"
+        }
+        else {
+          console.log("no cumplio la condicion");
+          $burgerButton.removeEventListener('touchstart', toggleMenu)
+          $logo.src="images/logo.jpg";
+          $logo.width="60"
+          $logo.height="60"
+        }
+      }
+      mediaQuery()
+
+      var $body = document.body;
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', function(ev) {
+        if (consulta.matches) {
+          $menu.classList.remove('active')
+          $burgerButton.classList.remove('icon-close')
+        }
+      });
+      gestos.on('swiperight', function(ev) {
+        if (consulta.matches) {
+          $menu.classList.add('active')
+          $burgerButton.classList.add('icon-close')
+          console.log($body.display)
+        }
+      });
+
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/blog_stylesheet.css">
+  </body>
+</html>

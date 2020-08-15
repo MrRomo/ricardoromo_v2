@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AI For Future equipo Ganador del AI Challenge
+ - Ricardo Romo</title>
+    <link rel="shortcut icon" href="../../images/favicon.jpg">
+    <style media="screen">
+      .lista {
+        text-align: left;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26369518-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-26369518-2');
+    </script>
+  </head>
+  <body>
+    <section class="portada background">
+      <header id="header" class=" header"> <!-- cabecera -->
+      </header>
+    </section>
+    <div class="article">
+      <span id = "navButton" class="icon-rigtharrow"></span>
+      <div class="navegacion">
+        <div id="sidebar">
+          <ul>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="article_content">
+        <div class="content">
+          <div class="title">
+            <h1 style="padding: 1% 10%;">AI For Future equipo Ganador del AI Challenge</h1>
+            <h2>Recursos</h2>
+
+          </div>
+          <div class="articleContent">
+            <!-- <iframe Src="https://www.youtube.com/embed/jGl-6SVJ0os"style="max-width: 490px; width:80%; height: 280px;" ></iframe> -->
+            <img src="images/PacmanBack.png" style="width: 60%;">
+            <p>Para poder ejecutar el juego es necesario tener los siguientes requisitos</p>
+            <ul class="lista">
+              <li>Computador con sistema operativo Ubuntu 16.04</li>
+              <li>Tarjeta de desarrollo Arduino Uno (o similar con al menos 4 pines GPIO)</li>
+            </ul>
+            <video width="320" height="240" controls>
+              <source src="images/video.mp4" type="video/mp4">
+            </video>
+            <p>Primero es necesario descargar el repositorio del juego, este funciona con ROS asi que se deben seguir las instrucciones para descargarlo:</p>
+            <h3><a target="_blank"href="https://github.com/carlosquinterop/ros-pacman.git"> Pacman World</a></h3>
+            <p>Tambien deben descargarse los recursos del controlador y seguir las instrucciones de la documentación:</p>
+            <h3><a target="_blank"href="https://github.com/MrRomo/AIForFuture"> Pacman Controller</a></h3>
+            <p>El juego puede jugarse con el controlador manual o con la inteligencia artificial. Para construir el controlador manual se puede hacer un guante con contactos metalicos en la yema de los dedos, o simplemente con 4 pulsadores conectados a los pines del arduino.</p>
+            <img src="images/guante.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../scripts/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/articles_stylesheet.css">
+    <script type="text/javascript"src="../../scripts/templatePage.js"></script>
+    <script type="text/javascript">
+      var rute = []
+      rute[0] = {
+                  rute: "../../"
+                }
+      renderContents($header,rute,header)
+      renderContents($footer,rute,footer)
+    </script>
+    <script type="text/javascript"src="script.js"></script>
+  </body>
+</html>
