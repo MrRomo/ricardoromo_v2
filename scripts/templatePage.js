@@ -8,8 +8,8 @@ const footer = function footerTemplate(content){
                        <img src="${content.rute}images/logo-white.jpg" alt="logotipo blanco" width="70">
                      </a>
                      <div class="">
-                       <a href="tel:+573002715386"> <strong>Telefono</strong> <span>3002715386</span> </a>
-                       <a href="mailto:jricardoromo21@gmail.com"> <strong>E-Mail</strong> <span>jricardoromo21@gmail.com</span> </a>
+                       <a href="tel:+"> <strong>Telefono</strong> <span></span> </a>
+                       <a href="mailto:"> <strong>E-Mail</strong> <span></span> </a>
                      </div>
                    </div>
                    <form class="formulario">
